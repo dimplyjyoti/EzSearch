@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<project name="EzSeach" basedir="." default="deploy">
+
+   <property file="build.properties"/>
+   <property name="src.dir" value="src"/>
+   <property name="web.dir" value="WebContent"/>
+   <property name="build.dir" value="build/classes"/>
+   <property name="name" value="EzSearch"/>
+
+   <path id="master-classpath">
+      <fileset dir="${web.dir}/WEB-INF/lib">
+         <include name="*.jar"/>
+      </fileset>
+      <pathelement path="${build.dir}"/>
+   </path>
+
+   <target name="build" description="Compile source tree java files" >
+      <mkdir dir="${build.dir}"/>
+      <javac destdir="${build.dir}" source="1.7" target="1.7">
+         <src path="${src.dir}"/>
+         <classpath refid="master-classpath"/>
+      </javac>
+   </target>
+ 
+   <target name="clean" description="Clean output directories">
+      <delete>
+         <fileset dir="${build.dir}">
+            <include name="**/*.class"/>
+         </fileset>
+      </delete>
+   </target>
+   
+   <target name="build-war" depends="build">
+
+   <war destfile="EzSearch.war" webxml="${web.dir}/WEB-INF/web.xml" >
+      <fileset dir="${web.dir}">
+         <include name="**/*.*"/>
+      </fileset>
+     
+      <classes dir="${build.dir}"/>
+   </war>
+   
+</target>
+
+   <target name="deploy" depends="build-war" description="Deploy application as a WAR file">
+      <echo message = "-- ${deploy.path} --"/>
+      <copy todir="${deploy.path}" preservelastmodified="false">
+         <fileset dir=".">
+            <include name="*.war"/>
+         </fileset>
+      </copy>
+	  <delete file="EzSearch.war"/>
+	  <delete dir="${deploy.path}/EzSearch"/>
+   </target>
+</project>
