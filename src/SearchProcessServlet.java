@@ -24,7 +24,7 @@ public class SearchProcessServlet extends HttpServlet{
 	         out.println("<html><head>");
 	         out.println("<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>");
 	         out.println("<title>Echo Servlet</title></head>");
-	         out.println("<body><h2>You have entered below things:</h2>");
+	         out.println("<body><h2>You have entered below things::</h2>");
 
 
 	         String searchterm = request.getParameter("searchterm");
