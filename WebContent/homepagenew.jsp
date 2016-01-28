@@ -3,10 +3,10 @@
 <head>
   <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
   <title>User Input Form</title>
-            <script src="http://code.jquery.com/jquery-2.2.0.js"></script>
+            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script>
             $(document).on("click", "#search", function() {
-                $.get("submit", $('#the-form').serialize(), function(responseText) {
+                $.get("submit", function(responseText) {
                     $("#resultdiv").text(responseText);
                 });
             });
@@ -15,11 +15,10 @@
 
 <body>
 <h2>User Input Form</h2>
-<!-- <form method="get" action="submit"> -->
-<form id="the-form">
+<form method="get" action="submit">
 <div id = enter_details>
 <fieldset>
-    <legend>Search Details:</legend>
+    <legend>Search Details jsp:</legend>
     Search Term: <input type="text" name="searchterm" /><br /><br />
     location: <input type="text" name="location" /><br /><br />
     limit: <input type="text" name="limit" /><br /><br />
@@ -27,7 +26,6 @@
   <input id="search" type="submit" value="SEARCH" />
   <p> </p>
   </div>
-  </form>
   <div id="resultdiv"></div>
 
 
@@ -59,6 +57,6 @@
   <input type="hidden" name="secret" value="888" />
   <input type="submit" value="SEND" />
   <input type="reset" value="CLEAR" /> -->
-<!-- </form> -->
+</form>
 </body>
 </html>
