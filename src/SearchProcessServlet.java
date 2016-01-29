@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Enumeration;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -88,9 +89,13 @@ public class SearchProcessServlet extends HttpServlet{
 //	         response.sendRedirect("searchresult.html");
 
 //////////////////////////////////
-		   response.setContentType("text/plain");
-		    response.setCharacterEncoding("UTF-8");
-		    response.getWriter().write(searchterm);
+//		   response.setContentType("text/plain");
+//		    response.setCharacterEncoding("UTF-8");
+//		    response.getWriter().write(searchterm);
+///////////////////
+	         RequestDispatcher dispatcher = request.getRequestDispatcher("searchresult.jsp");
+	         request.setAttribute("resultJson", searchResponse); // set your String value in the attribute
+	         dispatcher.forward( request, response );
 
 	   }
 

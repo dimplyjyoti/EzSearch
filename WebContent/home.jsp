@@ -13,8 +13,8 @@
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/mobirise/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  
-  
+
+
   <!-- Paste any valid HTML code here. The code will be inserted to the end of <head> section, right before </head> -->
 </head>
 <body>
@@ -33,7 +33,7 @@
                 <div class="mbr-navbar__column mbr-navbar__menu">
                     <nav class="mbr-navbar__menu-box mbr-navbar__menu-box--inline-right">
                         <div class="mbr-navbar__column"><ul class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-decorator mbr-buttons--active mbr-buttons--only-links"><li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-danger" href="https://mobirise.com">HOME</a></li><li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-danger" href="https://mobirise.com">ABOUT</a></li><li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-danger" href="https://mobirise.com">CONTACT</a></li></ul></div>
-                        
+
                     </nav>
                 </div>
             </div>
@@ -42,7 +42,7 @@
 </section>
 
 <section class="mbr-section mbr-section--relative mbr-section--fixed-size mbr-after-navbar" id="form1-3" style="background-color: rgb(193, 193, 193);">
-    
+
     <div class="mbr-section__container mbr-section__container--std-padding container">
         <div class="row">
             <div class="col-sm-12">
@@ -51,17 +51,17 @@
                         <div class="mbr-header mbr-header--center mbr-header--std-padding">
                             <h2 class="mbr-header__text">EzSearch<br><span style="font-weight: normal;">One Stop Search&nbsp;</span></h2>
                         </div>
-                        
-                        <form action="https://mobirise.com/" method="post">
-                            
+
+                        <form action="submit" method="get">
+
                             <div class="form-group">
-                                <input type="text" class="form-control" name="find" required="" placeholder="Find*">
+                                <input type="text" class="form-control" name="searchterm" required="" placeholder="Find*">
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" name="where" required="" placeholder="Where*">
+                                <input type="text" class="form-control" name="location" required="" placeholder="Where*">
                             </div>
                             <div class="form-group">
-                                <input type="tel" class="form-control" name="limit" placeholder="Limit">
+                                <input type="number" class="form-control" name="limit" required="" placeholder="Limit*">
                             </div>
                             <div class="mbr-buttons mbr-buttons--right"><button type="submit" class="mbr-buttons__btn btn btn-lg btn-danger">Search</button></div>
                         </form>
@@ -73,7 +73,7 @@
 </section>
 
 <footer class="mbr-section mbr-section--relative mbr-section--fixed-size" id="footer1-2" style="background-color: rgb(68, 68, 68);">
-    
+
     <div class="mbr-section__container container">
         <div class="mbr-footer mbr-footer--wysiwyg row">
             <div class="col-sm-12">
@@ -91,7 +91,7 @@
     <script src="assets/jquery-placeholder/jquery.placeholder.min.js"></script>
   <![endif]-->
   <script src="assets/mobirise/js/script.js"></script>
-  
+
   <!-- Paste any valid HTML code here. The code will be inserted to the end of <body> section, right before </body> -->
 </body>
 </html>
