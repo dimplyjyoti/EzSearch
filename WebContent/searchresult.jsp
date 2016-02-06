@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@ page import="jsonclasses.SearchResponse" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
   <!-- Site made with Mobirise Website Builder v2.8.4, https://mobirise.com -->
@@ -8,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="assets/images/search-862x744-69.png" type="image/x-icon">
   <meta name="description" content="Free Responsive Website Maker. Create awesome mobile-first websites. Easy and fast - No coding!">
-  <title>Mobirise Mobile Website Builder</title>
+  <title>EzSearch</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:700,400&amp;subset=cyrillic,latin,greek,vietnamese">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/mobirise/css/style.css">
@@ -18,7 +20,6 @@
   <!-- Paste any valid HTML code here. The code will be inserted to the end of <head> section, right before </head> -->
 </head>
 <body>
-<section class="engine"><a rel="nofollow" href="https://mobirise.com">Mobirise best website builder for mac</a></section>
 <section class="mbr-navbar mbr-navbar--freeze mbr-navbar--absolute mbr-navbar--transparent mbr-navbar--sticky mbr-navbar--auto-collapse" id="menu-0">
     <div class="mbr-navbar__section mbr-section">
         <div class="mbr-section__container container">
@@ -32,7 +33,7 @@
                 <div class="mbr-navbar__hamburger mbr-hamburger text-white"><span class="mbr-hamburger__line"></span></div>
                 <div class="mbr-navbar__column mbr-navbar__menu">
                     <nav class="mbr-navbar__menu-box mbr-navbar__menu-box--inline-right">
-                        <div class="mbr-navbar__column"><ul class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-decorator mbr-buttons--active mbr-buttons--only-links"><li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-danger" href="home.jsp">HOME</a></li><li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-danger" href="https://mobirise.com">ABOUT</a></li><li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-danger" href="https://mobirise.com">CONTACT</a></li></ul></div>
+                        <div class="mbr-navbar__column"><ul class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-decorator mbr-buttons--active mbr-buttons--only-links"><li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-danger" href="home.jsp">HOME</a></li><li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-danger" href="about.jsp">ABOUT</a></li><li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-danger" href="contact.jsp">CONTACT</a></li></ul></div>
 
                     </nav>
                 </div>
@@ -48,8 +49,25 @@
             <div class="col-sm-12">
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2">
-<h2>Search Results</h2>
-<%=request.getAttribute("resultJson")%>
+<h2>Search Results:</h2>
+
+
+<%-- <%=((SearchResponse)request.getAttribute("resultJson")).getBusinesses().get(0).getName()%> --%>
+<% pageContext.setAttribute("businesses", ((SearchResponse)request.getAttribute("resultJson")).getBusinesses());
+%>
+<ol type="1">
+    <c:forEach var="element" items="${pageScope.businesses}">
+   		<p>
+   		     <li>
+   		     <img src="${element.image_url}" width="100" height="100"> <br>
+   		     	${element.name} <br>
+   		     	Rating: ${element.rating} <br>
+   		     	Phone: ${element.display_phone} <br>
+   		     	Address: ${element.location.display_address[0]}, ${element.location.display_address[1]}<br>
+   		     </li>
+   		</p>
+    </c:forEach>
+</ol>
                     </div>
                 </div>
             </div>
