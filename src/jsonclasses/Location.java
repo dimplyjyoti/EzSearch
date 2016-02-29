@@ -4,6 +4,17 @@ import java.util.List;
 
 public class Location {
 
+	String city;
+	List<String> display_address;
+	double geo_accuracy;
+	String postal_code;
+	String country_code;
+	List<String> address;
+	Position coordinate;
+	String state_code;
+
+//getters and setter
+
 	public String getCity() {
 		return city;
 	}
@@ -52,12 +63,4 @@ public class Location {
 	public void setState_code(String state_code) {
 		this.state_code = state_code;
 	}
-	String city;
-	List<String> display_address;
-	double geo_accuracy;
-	String postal_code;
-	String country_code;
-	List<String> address;
-	Position coordinate;
-	String state_code;
 }

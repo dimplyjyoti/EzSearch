@@ -48,22 +48,8 @@
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2">
                         <div class="mbr-header mbr-header--center mbr-header--std-padding">
-                            <h2 class="mbr-header__text">EzSearch<br><span style="font-weight: normal;">One Stop Search&nbsp;</span></h2>
+                            <h2 class="mbr-header__text">Terms as per the project<br><span style="font-weight: normal;">At least one tool/application is used from each category of project] &nbsp;</span></h2>
                         </div>
-
-                        <form action="submit" method="get">
-
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="searchterm" required="" placeholder="Find*">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="location" required="" placeholder="Where*">
-                            </div>
-                            <div class="form-group">
-                                <input type="number" class="form-control" name="limit" placeholder="Limit">
-                            </div>
-                            <div class="mbr-buttons mbr-buttons--right"><button type="submit" class="mbr-buttons__btn btn btn-lg btn-danger">Search</button></div>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -76,7 +62,7 @@
     <div class="mbr-section__container container">
         <div class="mbr-footer mbr-footer--wysiwyg row">
             <div class="col-sm-12">
-                <p class="mbr-footer__copyright">Copyright (c) 2016 Company Name. <a class="mbr-footer__link text-gray" href="terms.jsp">Terms of Use</a></p>
+                <p class="mbr-footer__copyright">Copyright (c) 2015 Company Name. <a class="mbr-footer__link text-gray" href="terms.jsp">Terms of Use</a>  | <a class="mbr-footer__link text-gray" href="https://mobirise.com/">Privacy Policy</a></p>
             </div>
         </div>
     </div>
