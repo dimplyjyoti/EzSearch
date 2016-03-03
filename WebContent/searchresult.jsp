@@ -143,10 +143,124 @@
           center: {lat: 44.540, lng: -78.546},
           zoom: 8
         });
+        map.data.addGeoJson(jsonp);
       }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
         async defer></script>
+    <script>
+    var jsonp = {
+"type": "FeatureCollection",
+"features": [
+{
+"type": "Feature",
+"properties": {
+	"name": "testname",
+	"address": "testAddress",
+	"lat": "-98.729",
+	"lon": "36.4551"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+-98.729,
+36.4551,
+5
+]
+},
+"id": "us10004u99"
+},
+{
+"type": "Feature",
+"properties": {
+"mag": 2.5,
+"place": "15km S of Medford, Oklahoma",
+"time": 1456982174880,
+"updated": 1456985661855,
+"tz": -360,
+"url": "http://earthquake.usgs.gov/earthquakes/eventpage/us10004u98",
+"detail": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us10004u98.geojsonp",
+"felt": 0,
+"cdi": 1,
+"mmi": null,
+"alert": null,
+"status": "reviewed",
+"tsunami": 0,
+"sig": 96,
+"net": "us",
+"code": "10004u98",
+"ids": ",us10004u98,",
+"sources": ",us,",
+"types": ",dyfi,general-link,geoserve,nearby-cities,origin,phase-data,tectonic-summary,",
+"nst": null,
+"dmin": 0.209,
+"rms": 0.54,
+"gap": 45,
+"magType": "mb_lg",
+"type": "earthquake",
+"title": "M 2.5 - 15km S of Medford, Oklahoma"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+-97.7348,
+36.6638,
+5.77
+]
+},
+"id": "us10004u98"
+},
+{
+"type": "Feature",
+"properties": {
+"mag": 4.3,
+"place": "22km SSE of Circle, Alaska",
+"time": 1456383475000,
+"updated": 1456474499040,
+"tz": -540,
+"url": "http://earthquake.usgs.gov/earthquakes/eventpage/ak12879176",
+"detail": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/ak12879176.geojsonp",
+"felt": 5,
+"cdi": 2.9,
+"mmi": 4.01,
+"alert": "green",
+"status": "reviewed",
+"tsunami": 0,
+"sig": 286,
+"net": "ak",
+"code": "12879176",
+"ids": ",us10004sit,ak12879176,",
+"sources": ",us,ak,",
+"types": ",cap,dyfi,general-link,geoserve,impact-text,losspager,moment-tensor,nearby-cities,origin,phase-data,shakemap,",
+"nst": null,
+"dmin": null,
+"rms": 0.99,
+"gap": null,
+"magType": "ml",
+"type": "earthquake",
+"title": "M 4.3 - 22km SSE of Circle, Alaska"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+-143.8082,
+65.649,
+24.7
+]
+},
+"id": "ak12879176"
+}
+],
+"bbox": [
+-179.0794,
+-62.2332,
+-0.04,
+178.9559,
+85.1104,
+607.32
+]
+}
+</script>
 
 	<!-- Paste any valid HTML code here. The code will be inserted to the end of <body> section, right before </body> -->
 </body>
