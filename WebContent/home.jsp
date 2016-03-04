@@ -46,7 +46,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2">
+                    <div class="col-sm-88 col-sm-offset-22">
                         <div class="mbr-header mbr-header--center mbr-header--std-padding">
                             <h2 class="mbr-header__text">EzSearch<br><span style="font-weight: normal;">One Stop Search&nbsp;</span></h2>
                         </div>

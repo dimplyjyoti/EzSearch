@@ -3,14 +3,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
+<!-- Site made with Mobirise Website Builder v2.8.4, https://mobirise.com -->
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Mobirise v2.8.4, mobirise.com">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="assets/images/search-862x744-69.png"
 	type="image/x-icon">
-<link rel="stylesheet"
-	href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
 <meta name="description"
 	content="Free Responsive Website Maker. Create awesome mobile-first websites. Easy and fast - No coding!">
 <title>EzSearch</title>
@@ -20,23 +19,16 @@
 <link rel="stylesheet" href="assets/mobirise/css/style.css">
 <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css"
 	type="text/css">
-<style>
-#map {
-	width: 500px;
-	height: 400px;
-}
-</style>
+    <style>
+      #map {
+        width: 500px;
+        height: 400px;
+      }
+    </style>
 
 <!-- Paste any valid HTML code here. The code will be inserted to the end of <head> section, right before </head> -->
 </head>
 <body>
-
-<% 
-
-String resultgeojsonStr = (String) request.getAttribute("resultGeojson"); 
-Object mapBoundList = request.getAttribute("mapBoundList"); 
-
-%> 
 	<section
 		class="mbr-navbar mbr-navbar--freeze mbr-navbar--absolute mbr-navbar--transparent mbr-navbar--sticky mbr-navbar--auto-collapse"
 		id="menu-0">
@@ -87,44 +79,29 @@ Object mapBoundList = request.getAttribute("mapBoundList");
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="row">
-						<div class="col-sm-87 col-sm-offset-13">
-							<table>
-								<tr valign="top">
-									<td>
-										<h2>Search Results:</h2> <%-- <%=((SearchResponse)request.getAttribute("resultJson")).getBusinesses().get(0).getName()%> --%>
-										<%
-											pageContext.setAttribute("businesses",
-													((SearchResponse) request.getAttribute("resultJson")).getBusinesses());
-										%>
-										<ol type="1">
-											<c:forEach var="element" items="${pageScope.businesses}">
-												<p>
-												<table>
-													<tr>
-														<td><img src="${element.image_url}" width="100"
-															height="100"></td>
-														<td>
+						<div class="col-sm-8 col-sm-offset-2">
 
-															<div style="padding-left: 30px;">
-																<li>${element.name}<br> Rating:
-																	${element.rating} <br> Phone:
-																	${element.display_phone} <br> Address:
-																	${element.location.display_address[0]},
-																	${element.location.display_address[1]}<br> Review:
-																	${element.snippet_text} <br></li>
-															</div>
-														</td>
-													</tr>
-												</table>
-												</p>
-											</c:forEach>
-										</ol>
-									</td>
-									<td>
-										<div id="map"></div>
-									</td>
-								</tr>
-							</table>
+						<div id="map"></div>
+
+							<h2>Search Results:</h2>
+
+
+							<%-- <%=((SearchResponse)request.getAttribute("resultJson")).getBusinesses().get(0).getName()%> --%>
+							<% pageContext.setAttribute("businesses", ((SearchResponse)request.getAttribute("resultJson")).getBusinesses());
+%>
+							<ol type="1">
+								<c:forEach var="element" items="${pageScope.businesses}">
+									<p>
+									<li><img src="${element.image_url}" width="100"
+										height="100"> <br> ${element.name} <br>
+										Rating: ${element.rating} <br> Phone:
+										${element.display_phone} <br> Address:
+										${element.location.display_address[0]},
+										${element.location.display_address[1]}<br> Review:
+										${element.snippet_text} <br></li>
+									</p>
+								</c:forEach>
+							</ol>
 						</div>
 					</div>
 				</div>
@@ -158,73 +135,132 @@ Object mapBoundList = request.getAttribute("mapBoundList");
     <script src="assets/jquery-placeholder/jquery.placeholder.min.js"></script>
   <![endif]-->
 	<script src="assets/mobirise/js/script.js"></script>
-	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
-	<script>
-		var jsonp = {
-			"type" : "FeatureCollection",
-			"features" : [ {
-				"type" : "Feature",
-				"properties" : {
-					"name" : "testnameeee",
-					"address" : "testAddress",
-					"popupContent" : "testnamewwww"
-				},
-				"geometry" : {
-					"type" : "Point",
-					"coordinates" : [ -98.729, 36.4551 ]
-				}
-			}, {
-				"type" : "Feature",
-				"properties" : {
-					"name" : "testname2",
-					"address" : "testAddress2",
-					"popupContent" : "testname2"
-				},
-				"geometry" : {
-					"type" : "Point",
-					"coordinates" : [ -97.7348, 36.6638 ]
-				}
-			}, {
-				"type" : "Feature",
-				"properties" : {
-					"name" : "testname3",
-					"address" : "testAddress2",
-					"popupContent" : "testname3"
-				},
-				"geometry" : {
-					"type" : "Point",
-					"coordinates" : [ -92.7348, 36.6638 ]
-				}
-			} ]
-		}
-	</script>
 
-	<script>
-		var map = L.map('map').setView([ 36.4551, -98.729 ], 10);
-		L.tileLayer(
-						'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw',
-						{
-							maxZoom : 18,
-							attribution : 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, '
-									+ '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, '
-									+ 'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-							id : 'mapbox.streets'
-						}).addTo(map);
-		
-		map.fitBounds(<%=mapBoundList%>);
-
-		L.geoJson((<%=resultgeojsonStr%>), {onEachFeature : onEachFeature}).addTo(map);
-		var popup = L.popup();
-
-		function onEachFeature(feature, layer) {
-			// does this feature have a property named popupContent?
-			if (feature.properties && feature.properties.popupContent) {
-				layer.bindPopup(feature.properties.popupContent);
-			}
-		}
-	</script>
-
-
+	    <script>
+      function initMap() {
+        var mapDiv = document.getElementById('map');
+        var map = new google.maps.Map(mapDiv, {
+          center: {lat: 44.540, lng: -78.546},
+          zoom: 8
+        });
+        map.data.addGeoJson(jsonp);
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+        async defer></script>
+    <script>
+    var jsonp = {
+"type": "FeatureCollection",
+"features": [
+{
+"type": "Feature",
+"properties": {
+	"name": "testname",
+	"address": "testAddress",
+	"lat": "-98.729",
+	"lon": "36.4551"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+-98.729,
+36.4551,
+5
+]
+},
+"id": "us10004u99"
+},
+{
+"type": "Feature",
+"properties": {
+"mag": 2.5,
+"place": "15km S of Medford, Oklahoma",
+"time": 1456982174880,
+"updated": 1456985661855,
+"tz": -360,
+"url": "http://earthquake.usgs.gov/earthquakes/eventpage/us10004u98",
+"detail": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us10004u98.geojsonp",
+"felt": 0,
+"cdi": 1,
+"mmi": null,
+"alert": null,
+"status": "reviewed",
+"tsunami": 0,
+"sig": 96,
+"net": "us",
+"code": "10004u98",
+"ids": ",us10004u98,",
+"sources": ",us,",
+"types": ",dyfi,general-link,geoserve,nearby-cities,origin,phase-data,tectonic-summary,",
+"nst": null,
+"dmin": 0.209,
+"rms": 0.54,
+"gap": 45,
+"magType": "mb_lg",
+"type": "earthquake",
+"title": "M 2.5 - 15km S of Medford, Oklahoma"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+-97.7348,
+36.6638,
+5.77
+]
+},
+"id": "us10004u98"
+},
+{
+"type": "Feature",
+"properties": {
+"mag": 4.3,
+"place": "22km SSE of Circle, Alaska",
+"time": 1456383475000,
+"updated": 1456474499040,
+"tz": -540,
+"url": "http://earthquake.usgs.gov/earthquakes/eventpage/ak12879176",
+"detail": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/ak12879176.geojsonp",
+"felt": 5,
+"cdi": 2.9,
+"mmi": 4.01,
+"alert": "green",
+"status": "reviewed",
+"tsunami": 0,
+"sig": 286,
+"net": "ak",
+"code": "12879176",
+"ids": ",us10004sit,ak12879176,",
+"sources": ",us,ak,",
+"types": ",cap,dyfi,general-link,geoserve,impact-text,losspager,moment-tensor,nearby-cities,origin,phase-data,shakemap,",
+"nst": null,
+"dmin": null,
+"rms": 0.99,
+"gap": null,
+"magType": "ml",
+"type": "earthquake",
+"title": "M 4.3 - 22km SSE of Circle, Alaska"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+-143.8082,
+65.649,
+24.7
+]
+},
+"id": "ak12879176"
+}
+],
+"bbox": [
+-179.0794,
+-62.2332,
+-0.04,
+178.9559,
+85.1104,
+607.32
+]
+}
+</script>
 
 	<!-- Paste any valid HTML code here. The code will be inserted to the end of <body> section, right before </body> -->
 </body>
