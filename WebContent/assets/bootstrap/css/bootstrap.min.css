@@ -1837,6 +1837,23 @@ pre code {
     .col-sm-87 {
     width: 96.66666667%;
   }
+    .col-sm-89 {
+    width: 50.00%;
+    float: left;
+  }
+    .col-sm-90 {
+    width: 20.00%;
+    float: left;
+  }
+    .col-sm-91 {
+    width: 80.00%;
+    float: left;
+  }
+    .col-sm-92 {
+    width: 45.00%;
+    float: left;
+    padding-left: 5.00%;
+  }
   .col-sm-7 {
     width: 58.33333333%;
   }

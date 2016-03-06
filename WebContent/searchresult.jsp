@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Mobirise v2.8.4, mobirise.com">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="assets/images/search-862x744-69.png"
 	type="image/x-icon">
@@ -31,12 +30,12 @@
 </head>
 <body>
 
-<% 
+<%
 
-String resultgeojsonStr = (String) request.getAttribute("resultGeojson"); 
-Object mapBoundList = request.getAttribute("mapBoundList"); 
+String resultgeojsonStr = (String) request.getAttribute("resultGeojson");
+Object mapBoundList = request.getAttribute("mapBoundList");
 
-%> 
+%>
 	<section
 		class="mbr-navbar mbr-navbar--freeze mbr-navbar--absolute mbr-navbar--transparent mbr-navbar--sticky mbr-navbar--auto-collapse"
 		id="menu-0">
@@ -88,10 +87,41 @@ Object mapBoundList = request.getAttribute("mapBoundList");
 				<div class="col-sm-12">
 					<div class="row">
 						<div class="col-sm-87 col-sm-offset-13">
-							<table>
+
+										<h2>Search Results:</h2> <%-- <%=((SearchResponse)request.getAttribute("resultJson")).getBusinesses().get(0).getName()%> --%>
+										<%
+											pageContext.setAttribute("businesses",
+													((SearchResponse) request.getAttribute("resultJson")).getBusinesses());
+										%>
+										<div class="col-sm-89">
+										<ol type="1">
+											<c:forEach var="element" items="${pageScope.businesses}">
+												<p>
+
+												<div class="col-sm-90">
+												<img src="${element.image_url}" width="100"
+															height="100"></div>
+
+															<div class="col-sm-91">
+																<li>${element.name}<br> Rating:
+																	${element.rating} <br> Phone:
+																	${element.display_phone} <br> Address:
+																	${element.location.display_address[0]},
+																	${element.location.display_address[1]}<br> Review:
+																	${element.snippet_text} <br></li>
+															</div>
+
+
+												</p>
+											</c:forEach>
+										</ol>
+</div>
+										<div id="map" class="col-sm-92"></div>
+
+<%-- 							<table>
 								<tr valign="top">
 									<td>
-										<h2>Search Results:</h2> <%-- <%=((SearchResponse)request.getAttribute("resultJson")).getBusinesses().get(0).getName()%> --%>
+										<h2>Search Results:</h2> <%=((SearchResponse)request.getAttribute("resultJson")).getBusinesses().get(0).getName()%>
 										<%
 											pageContext.setAttribute("businesses",
 													((SearchResponse) request.getAttribute("resultJson")).getBusinesses());
@@ -124,7 +154,7 @@ Object mapBoundList = request.getAttribute("mapBoundList");
 										<div id="map"></div>
 									</td>
 								</tr>
-							</table>
+							</table> --%>
 						</div>
 					</div>
 				</div>
@@ -160,46 +190,6 @@ Object mapBoundList = request.getAttribute("mapBoundList");
 	<script src="assets/mobirise/js/script.js"></script>
 	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
 	<script>
-		var jsonp = {
-			"type" : "FeatureCollection",
-			"features" : [ {
-				"type" : "Feature",
-				"properties" : {
-					"name" : "testnameeee",
-					"address" : "testAddress",
-					"popupContent" : "testnamewwww"
-				},
-				"geometry" : {
-					"type" : "Point",
-					"coordinates" : [ -98.729, 36.4551 ]
-				}
-			}, {
-				"type" : "Feature",
-				"properties" : {
-					"name" : "testname2",
-					"address" : "testAddress2",
-					"popupContent" : "testname2"
-				},
-				"geometry" : {
-					"type" : "Point",
-					"coordinates" : [ -97.7348, 36.6638 ]
-				}
-			}, {
-				"type" : "Feature",
-				"properties" : {
-					"name" : "testname3",
-					"address" : "testAddress2",
-					"popupContent" : "testname3"
-				},
-				"geometry" : {
-					"type" : "Point",
-					"coordinates" : [ -92.7348, 36.6638 ]
-				}
-			} ]
-		}
-	</script>
-
-	<script>
 		var map = L.map('map').setView([ 36.4551, -98.729 ], 10);
 		L.tileLayer(
 						'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw',
@@ -210,7 +200,7 @@ Object mapBoundList = request.getAttribute("mapBoundList");
 									+ 'Imagery © <a href="http://mapbox.com">Mapbox</a>',
 							id : 'mapbox.streets'
 						}).addTo(map);
-		
+
 		map.fitBounds(<%=mapBoundList%>);
 
 		L.geoJson((<%=resultgeojsonStr%>), {onEachFeature : onEachFeature}).addTo(map);
