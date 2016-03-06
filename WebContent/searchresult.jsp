@@ -19,12 +19,6 @@
 <link rel="stylesheet" href="assets/mobirise/css/style.css">
 <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css"
 	type="text/css">
-<style>
-#map {
-	width: 500px;
-	height: 400px;
-}
-</style>
 
 <!-- Paste any valid HTML code here. The code will be inserted to the end of <head> section, right before </head> -->
 </head>
@@ -93,7 +87,8 @@ Object mapBoundList = request.getAttribute("mapBoundList");
 											pageContext.setAttribute("businesses",
 													((SearchResponse) request.getAttribute("resultJson")).getBusinesses());
 										%>
-										<div class="col-sm-89">
+										<div class="col-xs-93 col-sm-92" id="map"></div>
+										<div class="col-xs-94  col-sm-89">
 										<ol type="1">
 											<c:forEach var="element" items="${pageScope.businesses}">
 												<p>
@@ -116,45 +111,8 @@ Object mapBoundList = request.getAttribute("mapBoundList");
 											</c:forEach>
 										</ol>
 </div>
-										<div id="map" class="col-sm-92"></div>
+										
 
-<%-- 							<table>
-								<tr valign="top">
-									<td>
-										<h2>Search Results:</h2> <%=((SearchResponse)request.getAttribute("resultJson")).getBusinesses().get(0).getName()%>
-										<%
-											pageContext.setAttribute("businesses",
-													((SearchResponse) request.getAttribute("resultJson")).getBusinesses());
-										%>
-										<ol type="1">
-											<c:forEach var="element" items="${pageScope.businesses}">
-												<p>
-												<table>
-													<tr>
-														<td><img src="${element.image_url}" width="100"
-															height="100"></td>
-														<td>
-
-															<div style="padding-left: 30px;">
-																<li>${element.name}<br> Rating:
-																	${element.rating} <br> Phone:
-																	${element.display_phone} <br> Address:
-																	${element.location.display_address[0]},
-																	${element.location.display_address[1]}<br> Review:
-																	${element.snippet_text} <br></li>
-															</div>
-														</td>
-													</tr>
-												</table>
-												</p>
-											</c:forEach>
-										</ol>
-									</td>
-									<td>
-										<div id="map"></div>
-									</td>
-								</tr>
-							</table> --%>
 						</div>
 					</div>
 				</div>
@@ -194,7 +152,7 @@ Object mapBoundList = request.getAttribute("mapBoundList");
 		L.tileLayer(
 						'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw',
 						{
-							maxZoom : 18,
+							maxZoom : 20,
 							attribution : 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, '
 									+ '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, '
 									+ 'Imagery © <a href="http://mapbox.com">Mapbox</a>',
