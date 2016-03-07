@@ -81,38 +81,40 @@ Object mapBoundList = request.getAttribute("mapBoundList");
 				<div class="col-sm-12">
 					<div class="row">
 						<div class="col-sm-87 col-sm-offset-13">
-
-										<h2>Search Results:</h2> <%-- <%=((SearchResponse)request.getAttribute("resultJson")).getBusinesses().get(0).getName()%> --%>
-										<%
-											pageContext.setAttribute("businesses",
-													((SearchResponse) request.getAttribute("resultJson")).getBusinesses());
-										%>
-										<div class="col-xs-93 col-sm-92" id="map"></div>
-										<div class="col-xs-94  col-sm-89">
-										<ol type="1">
-											<c:forEach var="element" items="${pageScope.businesses}">
-												<p>
-
-												<div class="col-sm-90">
-												<img src="${element.image_url}" width="100"
-															height="100"></div>
-
-															<div class="col-sm-91">
-																<li>${element.name}<br> Rating:
-																	${element.rating} <br> Phone:
-																	${element.display_phone} <br> Address:
-																	${element.location.display_address[0]},
-																	${element.location.display_address[1]}<br> Review:
-																	${element.snippet_text} <br></li>
-															</div>
+						
 
 
-												</p>
-											</c:forEach>
-										</ol>
-</div>
-										
+<div id="status">
+</div>						
 
+							<h2>Search Results:</h2>
+							<%-- <%=((SearchResponse)request.getAttribute("resultJson")).getBusinesses().get(0).getName()%> --%>
+							<%
+								pageContext.setAttribute("businesses",
+										((SearchResponse) request.getAttribute("resultJson")).getBusinesses());
+							%>
+							<div class="col-xs-93 col-sm-92" id="map"></div>
+							<div class="col-xs-94  col-sm-89">
+								<ol type="1">
+									<c:forEach var="element" items="${pageScope.businesses}">
+										<p>
+										<div class="col-sm-90">
+											<img src="${element.image_url}" width="100" height="100">
+										</div>
+
+										<div class="col-sm-91">
+											<li>${element.name}<br> Rating: ${element.rating} <br>
+												Phone: ${element.display_phone} <br> Address:
+												${element.location.display_address[0]},
+												${element.location.display_address[1]}<br> Review:
+												${element.snippet_text} <br></li>
+										</div>
+
+
+										</p>
+									</c:forEach>
+								</ol>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -171,8 +173,6 @@ Object mapBoundList = request.getAttribute("mapBoundList");
 			}
 		}
 	</script>
-
-
 
 	<!-- Paste any valid HTML code here. The code will be inserted to the end of <body> section, right before </body> -->
 </body>
