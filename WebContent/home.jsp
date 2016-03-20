@@ -33,7 +33,7 @@
                     <nav class="mbr-navbar__menu-box mbr-navbar__menu-box--inline-right">
                     <fb:login-button scope="public_profile,email" autologoutlink="true" onlogin="checkLoginState();">
 					</fb:login-button>
-					
+
                         <div class="mbr-navbar__column"><ul class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-decorator mbr-buttons--active mbr-buttons--only-links"><li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-danger" href="home.jsp">HOME</a></li><li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-danger" href="about.jsp">ABOUT</a></li><li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-danger" href="contact.jsp">CONTACT</a></li></ul></div>
 
                     </nav>
@@ -45,7 +45,7 @@
 
 <section class="mbr-section mbr-section--relative mbr-section--fixed-size mbr-after-navbar" id="form1-3" style="background-color: rgb(255, 236, 168);">
                         <div class="mbr-header mbr-header--center mbr-header--std-padding mbr-header__text" id="status"/>
-                            
+
 
 </div>
     <div class="mbr-section__container mbr-section__container--std-padding container">
@@ -56,7 +56,7 @@
                         <div class="mbr-header mbr-header--center mbr-header--std-padding">
                             <h2 class="mbr-header__text">EzSearch<br><span style="font-weight: normal;">One Stop Search&nbsp;</span></h2>
                         </div>
-                        
+
 
                         <form action="submit" method="get">
 
@@ -132,14 +132,14 @@
 
   window.fbAsyncInit = function() {
   FB.init({
-    appId      : '605876539567170',
-    cookie     : true,  // enable cookies to allow the server to access 
+    appId      : '973403972706837',
+    cookie     : true,  // enable cookies to allow the server to access
                         // the session
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.5' // use graph api version 2.5
   });
 
-  // Now that we've initialized the JavaScript SDK, we call 
+  // Now that we've initialized the JavaScript SDK, we call
   // FB.getLoginStatus().  This function gets the state of the
   // person visiting this page and can return one of three states to
   // the callback you provide.  They can be:
@@ -177,7 +177,7 @@
       /* console.log("loc: " + JSON.stringify(response)) */
       console.log("loc: " + response.location.name);
     });
-  }	  
+  }
 </script>
 
   <!-- Paste any valid HTML code here. The code will be inserted to the end of <body> section, right before </body> -->
