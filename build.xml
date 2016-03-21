@@ -49,7 +49,7 @@
             <include name="*.war"/>
          </fileset>
       </copy>
-	  <delete file="EzSearch.war"/>
+<!--	  <delete file="EzSearch.war"/> -->
 	  <delete dir="${deploy.path}/EzSearch"/>
    </target>
 </project>
