@@ -3,6 +3,7 @@
 
    <property file="build.properties"/>
    <property name="src.dir" value="src"/>
+   <property name="deploy.dir" value="webapps"/>
    <property name="web.dir" value="WebContent"/>
    <property name="build.dir" value="build/classes"/>
    <property name="name" value="EzSearch"/>
@@ -32,7 +33,7 @@
    
    <target name="build-war" depends="build">
 
-   <war destfile="EzSearch.war" webxml="${web.dir}/WEB-INF/web.xml" >
+   <war destfile="ROOT.war" webxml="${web.dir}/WEB-INF/web.xml" >
       <fileset dir="${web.dir}">
          <include name="**/*.*"/>
       </fileset>
@@ -44,7 +45,7 @@
 
    <target name="deploy" depends="build-war" description="Deploy application as a WAR file">
       <echo message = "-- ${deploy.path} --"/>
-      <copy todir="${deploy.path}" preservelastmodified="false">
+      <copy todir="${deploy.dir}" preservelastmodified="false">
          <fileset dir=".">
             <include name="*.war"/>
          </fileset>
