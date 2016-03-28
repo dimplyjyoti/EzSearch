@@ -1,12 +1,12 @@
-package geojsonClasses;
+package com.project.ezsearch.geojsonClasses;
 
 public class Properties {
 
 	String name;
 	String address;
 	String popupContent;
-	
-	
+
+
 	public String getName() {
 		return name;
 	}

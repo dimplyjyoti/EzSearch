@@ -1,4 +1,4 @@
-package geojsonClasses;
+package com.project.ezsearch.geojsonClasses;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ public class ResultGeojson {
 
 	String type;
 	List<Feature> features;
-	
-	
+
+
 	public String getType() {
 		return type;
 	}
@@ -20,6 +20,6 @@ public class ResultGeojson {
 	public void setFeatures(List<Feature> features) {
 		this.features = features;
 	}
-	
-	
+
+
 }

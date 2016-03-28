@@ -1,10 +1,10 @@
-package org.maven.ezsearch2;
+package com.project.ezsearch;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class App
 {
     public static void main( String[] args )
     {

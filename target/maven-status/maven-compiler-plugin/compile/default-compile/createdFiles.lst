@@ -1,0 +1,16 @@
+geojsonClasses\Geometry.class
+org\maven\ezsearch2\App.class
+jsonclasses\Category.class
+SearchProcessServlet.class
+geojsonClasses\Properties.class
+jsonclasses\Business.class
+geojsonClasses\Feature.class
+YelpAPI$1.class
+TwoStepOAuth.class
+jsonclasses\Region.class
+jsonclasses\Location.class
+YelpAPI.class
+geojsonClasses\ResultGeojson.class
+YelpAPI$YelpAPICLI.class
+jsonclasses\Position.class
+jsonclasses\SearchResponse.class

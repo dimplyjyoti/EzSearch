@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<%@ page import="jsonclasses.SearchResponse"%>
+<%@ page import="com.project.ezsearch.jsonclasses.SearchResponse"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
@@ -81,18 +81,23 @@ Object mapBoundList = request.getAttribute("mapBoundList");
 				<div class="col-sm-12">
 					<div class="row">
 						<div class="col-sm-87 col-sm-offset-13">
-						
+
 
 
 <div id="status">
-</div>						
+</div>
 
 							<h2>Search Results:</h2>
+
 							<%-- <%=((SearchResponse)request.getAttribute("resultJson")).getBusinesses().get(0).getName()%> --%>
 							<%
 								pageContext.setAttribute("businesses",
 										((SearchResponse) request.getAttribute("resultJson")).getBusinesses());
+							pageContext.setAttribute("namefromdb",
+									((String) request.getAttribute("namefromdb")));
 							%>
+
+							++${pageScope.namefromdb}--
 							<div class="col-xs-93 col-sm-92" id="map"></div>
 							<div class="col-xs-94  col-sm-89">
 								<ol type="1">

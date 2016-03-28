@@ -1,4 +1,4 @@
-package geojsonClasses;
+package com.project.ezsearch.geojsonClasses;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ public class Geometry {
 
 	String type;
 	List<Double> coordinates;
-	
-	
+
+
 	public String getType() {
 		return type;
 	}

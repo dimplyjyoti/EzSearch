@@ -1,12 +1,12 @@
-package geojsonClasses;
+package com.project.ezsearch.geojsonClasses;
 
 public class Feature {
 
 	String type;
 	Properties properties;
 	Geometry geometry;
-	
-	
+
+
 	public String getType() {
 		return type;
 	}

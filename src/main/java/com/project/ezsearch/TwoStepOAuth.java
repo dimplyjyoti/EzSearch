@@ -1,3 +1,5 @@
+package com.project.ezsearch;
+
 import org.scribe.builder.api.DefaultApi10a;
 import org.scribe.model.Token;
 

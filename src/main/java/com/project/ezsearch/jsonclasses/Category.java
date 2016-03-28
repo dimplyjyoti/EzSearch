@@ -1,4 +1,4 @@
-package jsonclasses;
+package com.project.ezsearch.jsonclasses;
 
 public class Category {
 
