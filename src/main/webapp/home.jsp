@@ -31,8 +31,8 @@
                 <div class="mbr-navbar__hamburger mbr-hamburger text-white"><span class="mbr-hamburger__line"></span></div>
                 <div class="mbr-navbar__column mbr-navbar__menu">
                     <nav class="mbr-navbar__menu-box mbr-navbar__menu-box--inline-right">
-                    <fb:login-button scope="public_profile,email" autologoutlink="true" onlogin="checkLoginState();">
-					</fb:login-button>
+<!--                     <fb:login-button scope="public_profile,email" autologoutlink="true" onlogin="checkLoginState();">
+					</fb:login-button> -->
 
                         <div class="mbr-navbar__column"><ul class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-decorator mbr-buttons--active mbr-buttons--only-links"><li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-danger" href="home.jsp">HOME</a></li><li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-danger" href="about.jsp">ABOUT</a></li><li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-danger" href="contact.jsp">CONTACT</a></li></ul></div>
 

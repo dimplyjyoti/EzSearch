@@ -536,6 +536,9 @@ html {
 .mbr-section__container--std-padding {
   padding: 93px 0;
 }
+.mbr-section__container--std-padding2 {
+  padding: 30px 0;
+}
 .mbr-section__container--std-top-padding {
   padding-top: 93px;
 }

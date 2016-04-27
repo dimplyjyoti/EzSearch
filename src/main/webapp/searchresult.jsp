@@ -24,12 +24,11 @@
 </head>
 <body>
 
-<%
-
-String resultgeojsonStr = (String) request.getAttribute("resultGeojson");
-Object mapBoundList = request.getAttribute("mapBoundList");
-
-%>
+	<%
+		String resultgeojsonStr = (String) request
+				.getAttribute("resultGeojson");
+		Object mapBoundList = request.getAttribute("mapBoundList");
+	%>
 	<section
 		class="mbr-navbar mbr-navbar--freeze mbr-navbar--absolute mbr-navbar--transparent mbr-navbar--sticky mbr-navbar--auto-collapse"
 		id="menu-0">
@@ -76,7 +75,7 @@ Object mapBoundList = request.getAttribute("mapBoundList");
 		id="form1-3" style="background-color: rgb(193, 193, 193);">
 
 		<div
-			class="mbr-section__container mbr-section__container--std-padding container">
+			class="mbr-section__container mbr-section__container--std-padding2 container">
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="row">
@@ -84,15 +83,14 @@ Object mapBoundList = request.getAttribute("mapBoundList");
 
 
 
-<div id="status">
-</div>
+							<div id="status"></div>
 
 							<h2>Search Results:</h2>
 
 							<%-- <%=((SearchResponse)request.getAttribute("resultJson")).getBusinesses().get(0).getName()%> --%>
 							<%
-								pageContext.setAttribute("businesses",
-										((SearchResponse) request.getAttribute("resultJson")).getBusinesses());
+								pageContext.setAttribute("businesses", ((SearchResponse) request
+										.getAttribute("resultJson")).getBusinesses());
 							%>
 
 							<div class="col-xs-93 col-sm-92" id="map"></div>
@@ -153,7 +151,8 @@ Object mapBoundList = request.getAttribute("mapBoundList");
 	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
 	<script>
 		var map = L.map('map').setView([ 36.4551, -98.729 ], 10);
-		L.tileLayer(
+		L
+				.tileLayer(
 						'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw',
 						{
 							maxZoom : 20,
@@ -163,9 +162,15 @@ Object mapBoundList = request.getAttribute("mapBoundList");
 							id : 'mapbox.streets'
 						}).addTo(map);
 
-		map.fitBounds(<%=mapBoundList%>);
+		map.fitBounds(
+	<%=mapBoundList%>
+		);
 
-		L.geoJson((<%=resultgeojsonStr%>), {onEachFeature : onEachFeature}).addTo(map);
+		L.geoJson((
+	<%=resultgeojsonStr%>
+		), {
+			onEachFeature : onEachFeature
+		}).addTo(map);
 		var popup = L.popup();
 
 		function onEachFeature(feature, layer) {
