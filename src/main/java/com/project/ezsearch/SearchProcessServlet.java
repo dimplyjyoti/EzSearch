@@ -23,13 +23,15 @@ import com.project.ezsearch.geojsonClasses.ResultGeojson;
 
 public class SearchProcessServlet extends HttpServlet {
 
-	   // JDBC driver name and database URL
 	   static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	   static final String DB_URL = "jdbc:mysql://127.6.134.2:3306/ezsearch_db";
+//	   static final String DB_URL = "jdbc:mysql://127.6.134.2:3306/ezsearch_db";
+//	   static final String USER = "adminstqHYBl";
+//	   static final String PASS = "string";
 
-	   //  Database credentials
-	   static final String USER = "adminstqHYBl";
-	   static final String PASS = "string";
+	   static final String DB_URL = "jdbc:mysql://localhost:3306/restaurantdb";
+	   static final String USER = "root";
+	   static final String PASS = "ishi";
+
 
 
 	@Override

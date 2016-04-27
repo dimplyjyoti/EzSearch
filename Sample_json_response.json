@@ -1,0 +1,105 @@
+{
+    "region": {
+        "span": {
+            "latitude_delta": 0.02638977000000864, 
+            "longitude_delta": 0.06827655999998683
+        }, 
+        "center": {
+            "latitude": 37.387193350000004, 
+            "longitude": -122.0269372
+        }
+    }, 
+    "total": 1037, 
+    "businesses": [
+        {
+            "is_claimed": true, 
+            "rating": 4.5, 
+            "mobile_url": "http://m.yelp.com/biz/a-slice-of-new-york-sunnyvale?utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=3kYPv_bPueGVsgWLkwYffA", 
+            "rating_img_url": "https://s3-media2.fl.yelpcdn.com/assets/2/www/img/99493c12711e/ico/stars/v1/stars_4_half.png", 
+            "review_count": 741, 
+            "name": "A Slice of New York", 
+            "rating_img_url_small": "https://s3-media2.fl.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png", 
+            "url": "http://www.yelp.com/biz/a-slice-of-new-york-sunnyvale?utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=3kYPv_bPueGVsgWLkwYffA", 
+            "categories": [
+                [
+                    "Pizza", 
+                    "pizza"
+                ], 
+                [
+                    "Italian", 
+                    "italian"
+                ]
+            ], 
+            "phone": "6509386969", 
+            "snippet_text": "I grew up in New Jersey, so I'm constantly in search of good pizza, which can sometimes be shockingly hard to find. A Slice of New York definitely delivers...", 
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/9pqGMEVbXLa6dfMpxn_wPw/ms.jpg", 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/photo/uuMyYT6H1XqHN0bR25sxOw/ms.jpg", 
+            "display_phone": "+1-650-938-6969", 
+            "rating_img_url_large": "https://s3-media4.fl.yelpcdn.com/assets/2/www/img/9f83790ff7f6/ico/stars/v1/stars_large_4_half.png", 
+            "id": "a-slice-of-new-york-sunnyvale", 
+            "is_closed": false, 
+            "location": {
+                "city": "Sunnyvale", 
+                "display_address": [
+                    "1253 W El Camino Real", 
+                    "Sunnyvale, CA 94087"
+                ], 
+                "geo_accuracy": 9.5, 
+                "postal_code": "94087", 
+                "country_code": "US", 
+                "address": [
+                    "1253 W El Camino Real"
+                ], 
+                "coordinate": {
+                    "latitude": 37.375198, 
+                    "longitude": -122.057972
+                }, 
+                "state_code": "CA"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 4.0, 
+            "mobile_url": "http://m.yelp.com/biz/giovannis-pizzeria-sunnyvale?utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=3kYPv_bPueGVsgWLkwYffA", 
+            "rating_img_url": "https://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png", 
+            "review_count": 445, 
+            "name": "Giovanni's Pizzeria", 
+            "rating_img_url_small": "https://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png", 
+            "url": "http://www.yelp.com/biz/giovannis-pizzeria-sunnyvale?utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=3kYPv_bPueGVsgWLkwYffA", 
+            "categories": [
+                [
+                    "Pizza", 
+                    "pizza"
+                ]
+            ], 
+            "menu_date_updated": 1441955054, 
+            "phone": "4087344221", 
+            "snippet_text": "On the outskirts of Sunnyvale, off the middle of nowhere off Lawrence Expressway is Giovanni's Pizzeria. Be sure to have your Google Maps set, so you don't...", 
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/J5y4tVAj6V-SChQpNA-B2A/ms.jpg", 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/photo/nAUeZ08_-lpcHUJ6j2Vglw/ms.jpg", 
+            "display_phone": "+1-408-734-4221", 
+            "rating_img_url_large": "https://s3-media2.fl.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/v1/stars_large_4.png", 
+            "menu_provider": "single_platform", 
+            "id": "giovannis-pizzeria-sunnyvale", 
+            "is_closed": false, 
+            "location": {
+                "city": "Sunnyvale", 
+                "display_address": [
+                    "1127 N Lawrence Expy", 
+                    "Sunnyvale, CA 94089"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "94089", 
+                "country_code": "US", 
+                "address": [
+                    "1127 N Lawrence Expy"
+                ], 
+                "coordinate": {
+                    "latitude": 37.3973999023438, 
+                    "longitude": -121.996726989746
+                }, 
+                "state_code": "CA"
+            }
+        }
+    ]
+}
