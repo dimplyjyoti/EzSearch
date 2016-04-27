@@ -93,11 +93,8 @@ Object mapBoundList = request.getAttribute("mapBoundList");
 							<%
 								pageContext.setAttribute("businesses",
 										((SearchResponse) request.getAttribute("resultJson")).getBusinesses());
-							pageContext.setAttribute("namefromdb",
-									((String) request.getAttribute("namefromdb")));
 							%>
 
-							++${pageScope.namefromdb}--
 							<div class="col-xs-93 col-sm-92" id="map"></div>
 							<div class="col-xs-94  col-sm-89">
 								<ol type="1">

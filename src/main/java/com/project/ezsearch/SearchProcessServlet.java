@@ -24,10 +24,6 @@ import com.project.ezsearch.geojsonClasses.ResultGeojson;
 public class SearchProcessServlet extends HttpServlet {
 
 	   static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-//	   static final String DB_URL = "jdbc:mysql://127.6.134.2:3306/ezsearch_db";
-//	   static final String USER = "adminstqHYBl";
-//	   static final String PASS = "string";
-
 	   static final String DB_URL = "jdbc:mysql://localhost:3306/restaurantdb";
 	   static final String USER = "root";
 	   static final String PASS = "ishi";
@@ -40,7 +36,7 @@ public class SearchProcessServlet extends HttpServlet {
 		String searchterm = request.getParameter("searchterm");
 		String location = request.getParameter("location");
 		String limit = request.getParameter("limit");
-		String name = null;
+
 		if (limit.isEmpty()) {
 			limit = "5";
 		}
@@ -83,51 +79,49 @@ public class SearchProcessServlet extends HttpServlet {
 		}
 		resultGeojson.setFeatures(features);
 
-// ***********
 
+// *********** DB connectivity testing code ***********
 
-		   Connection conn = null;
-		   Statement stmt = null;
-	      try {
-			Class.forName("com.mysql.jdbc.Driver");
-		      //STEP 3: Open a connection
-		      System.out.println("Connecting to database...");
-		      conn = DriverManager.getConnection(DB_URL,USER,PASS);
-
-		      //STEP 4: Execute a query
-		      System.out.println("Creating statement...");
-		      stmt = conn.createStatement();
-		      String sql;
-		      sql = "SELECT * FROM test";
-		      ResultSet rs = stmt.executeQuery(sql);
-		      //STEP 5: Extract data from result set
-		      while(rs.next()){
-		         //Retrieve by column name
-		         name  = rs.getString("NAME");
-		         int age = rs.getInt("AGE");
-
-		         //Display values
-		         System.out.print("ID: " + name);
-		         System.out.print(", Age: " + age);
-
-		      }
-		      //STEP 6: Clean-up environment
-		      rs.close();
-		      stmt.close();
-		      conn.close();
-
-
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-
+//		   Connection conn = null;
+//		   Statement stmt = null;
+//	      try {
+//			Class.forName("com.mysql.jdbc.Driver");
+//		      //STEP 3: Open a connection
+//		      System.out.println("Connecting to database...");
+//		      conn = DriverManager.getConnection(DB_URL,USER,PASS);
+//
+//		      //STEP 4: Execute a query
+//		      System.out.println("Creating statement...");
+//		      stmt = conn.createStatement();
+//		      String sql;
+//		      sql = "SELECT * FROM test";
+//		      ResultSet rs = stmt.executeQuery(sql);
+//		      //STEP 5: Extract data from result set
+//		      while(rs.next()){
+//		         //Retrieve by column name
+//		         name  = rs.getString("NAME");
+//		         int age = rs.getInt("AGE");
+//
+//		         //Display values
+//		         System.out.print("ID: " + name);
+//		         System.out.print(", Age: " + age);
+//
+//		      }
+//		      //STEP 6: Clean-up environment
+//		      rs.close();
+//		      stmt.close();
+//		      conn.close();
+//
+//
+//		} catch (ClassNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 
 
 // **********
@@ -141,21 +135,13 @@ public class SearchProcessServlet extends HttpServlet {
 																// attribute
 		request.setAttribute("resultGeojson", geojson);
 		request.setAttribute("mapBoundList", mapBoundList);
-		if(name == null) {
-			name = "default";
-		}
-		request.setAttribute("namefromdb", name);
+//		if(name == null) {
+//			name = "default";
+//		}
+//		request.setAttribute("namefromdb", name);
 		dispatcher.forward(request, response);
 
 	}
-
-	// // Redirect POST request to GET request.
-	// @Override
-	// public void doPost(HttpServletRequest request, HttpServletResponse
-	// response)
-	// throws IOException, ServletException {
-	// doGet(request, response);
-	// }
 
 	// Filter the string for special HTML characters to prevent
 	// command injection attack
