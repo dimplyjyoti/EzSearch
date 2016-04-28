@@ -48,7 +48,7 @@
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2">
                         <div class="mbr-header mbr-header--center mbr-header--std-padding">
-                            <h2 class="mbr-header__text">Project of CS532<br><span style="font-weight: normal;">from : &nbsp;</span></h2>
+                            <h2 class="mbr-header__text">Project of CS532<br><span style="font-weight: normal;">from : Jyoti, Sreeja, Priyank and Chintan &nbsp;</span></h2>
                         </div>
                     </div>
                 </div>
