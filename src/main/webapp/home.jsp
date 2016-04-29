@@ -43,7 +43,7 @@
     </div>
 </section>
 
-<section class="mbr-section mbr-section--relative mbr-section--fixed-size mbr-after-navbar" id="form1-3" style="background-color: rgb(209, 164, 255);">
+<section class="mbr-section mbr-section--relative mbr-section--fixed-size mbr-after-navbar" id="form1-3" style="background-color: rgb(193, 193, 193);">
                         <div class="mbr-header mbr-header--center mbr-header--std-padding mbr-header__text" id="status"/>
 
 
