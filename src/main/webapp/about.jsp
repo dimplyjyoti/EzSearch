@@ -48,7 +48,8 @@
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2">
                         <div class="mbr-header mbr-header--center mbr-header--std-padding">
-                            <h2 class="mbr-header__text">Project of CS532<br><span style="font-weight: normal;">from : Jyoti, Sreeja, Priyank and Chintan &nbsp;</span></h2>
+                            <h2 class="mbr-header__text">Project of CS532<br><span style="font-weight: normal;">From : Jyoti, Sreeja and Chintan &nbsp;</span></h2>
+
                         </div>
                     </div>
                 </div>
@@ -62,7 +63,7 @@
     <div class="mbr-section__container container">
         <div class="mbr-footer mbr-footer--wysiwyg row">
             <div class="col-sm-12">
-                <p class="mbr-footer__copyright">Copyright (c) 2015 Company Name. <a class="mbr-footer__link text-gray" href="terms.jsp">Terms of Use</a>  | <a class="mbr-footer__link text-gray" href="https://mobirise.com/">Privacy Policy</a></p>
+                <p class="mbr-footer__copyright">Copyright (c) 2016 Company Name. <a class="mbr-footer__link text-gray" href="terms.jsp">Terms of Use</a>  | <a class="mbr-footer__link text-gray" href="https://mobirise.com/">Privacy Policy</a></p>
             </div>
         </div>
     </div>
